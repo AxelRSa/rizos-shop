@@ -10,7 +10,7 @@ module.exports = {
  devServer: { contentBase: "./dist" },
  entry: "./src/index.js",
  output: {
-  filename: "script.js",
+  filename: "resource/script.js",
   path: path.resolve(__dirname, "dist"),
   clean: mode == "production" ? true : false,
  },
@@ -20,7 +20,9 @@ module.exports = {
    {
     test: /\.scss$/i,
     use: [
-     mode == "production" ? MiniCssExtractPlugin.loader : "style-loader",
+     mode == "production"
+      ? { loader: MiniCssExtractPlugin.loader, options: { publicPath: "../" } }
+      : "style-loader",
      "css-loader",
      mode == "production" ? "postcss-loader" : "sass-loader",
     ],
@@ -28,12 +30,12 @@ module.exports = {
    {
     test: /\.(jpe?g|png|gif|svg|webp)$/i,
     type: "asset",
-    generator: { filename: "media/images/[name][ext]" },
+    generator: { filename: "assets/images/[name][ext]" },
    },
    {
     test: /\.(eot|svg|ttf|woff|woff2)$/i,
     type: "asset",
-    generator: { filename: "media/fonts/[name][ext]" },
+    generator: { filename: "assets/fonts/[name][ext]" },
    },
   ],
  },
@@ -43,6 +45,6 @@ module.exports = {
    filename: "index.html",
    inject: "body",
   }),
-  new MiniCssExtractPlugin({ filename: "styles.css" }),
+  new MiniCssExtractPlugin({ filename: "resource/styles.css" }),
  ],
 };

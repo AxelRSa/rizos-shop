@@ -6,7 +6,7 @@ const path = require("path");
 module.exports = {
  mode: mode,
  devtool: "source-map",
- target: "web",
+ target: mode == "production" ? "browserlist" : "web",
  devServer: { contentBase: "./dist" },
  entry: "./src/index.js",
  output: {

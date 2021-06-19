@@ -1,0 +1,25 @@
+// rozha-one-regular - latin
+@font-face {
+ font-family: "Rozha One";
+ font-style: normal;
+ font-weight: 400;
+ //  IE9 Compat Modes
+ src: url("./assets/fonts/rozha-one/rozha-one-v8-latin-regular.eot");
+ src: local(""),
+  //  IE6-IE8
+  url("./assets/fonts/rozha-one/rozha-one-v8-latin-regular.eot?#iefix")
+   format("embedded-opentype"),
+  // /* Super Modern Browsers */
+  url("./assets/fonts/rozha-one/rozha-one-v8-latin-regular.woff2")
+   format("woff2"),
+  // /* Modern Browsers */
+  url("./assets/fonts/rozha-one/rozha-one-v8-latin-regular.woff") format(
+    "woff"
+   ),
+  // /* Safari, Android, iOS */
+  url("./assets/fonts/rozha-one/rozha-one-v8-latin-regular.ttf")
+   format("truetype"),
+  // Legacy iOS */
+  url("./assets/fonts/rozha-one/rozha-one-v8-latin-regular.svg#RozhaOne")
+   format("svg");
+}

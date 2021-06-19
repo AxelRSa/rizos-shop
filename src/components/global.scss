@@ -1,0 +1,40 @@
+@import "variables";
+:root {
+ --font-title: "Rozha One";
+ --header-border: #0002;
+}
+html {
+ max-width: 1400px;
+ margin: auto;
+}
+// responsive media queries
+// xl >1200px
+@media (max-width: $xl) {
+ html {
+  font-size: 15px;
+ }
+}
+// lg >992px
+@media (max-width: $lg) {
+ html {
+  font-size: 14px;
+ }
+}
+// md >768px
+@media (max-width: $md) {
+ html {
+  font-size: 13px;
+ }
+}
+// sm >576px
+@media (max-width: $sm) {
+ html {
+  font-size: 12px;
+ }
+}
+// xs <576px
+@media (max-width: $xs) {
+ html {
+  font-size: 11px;
+ }
+}

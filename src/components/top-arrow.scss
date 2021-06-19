@@ -1,0 +1,12 @@
+@import "variables.scss";
+.top-arrow--mobile {
+ transform: rotate(-90deg);
+}
+.top-arrow--mobile {
+ display: none;
+}
+@media (max-width: $sm) {
+ .top-arrow--mobile {
+  display: block;
+ }
+}

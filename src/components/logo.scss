@@ -1,0 +1,19 @@
+.logo {
+ display: flex;
+ align-items: center;
+ height: 100%;
+ padding-right: 1.5rem;
+ border-right: solid 1px var(--header-border);
+ &__image {
+  width: 5rem;
+  height: 5rem;
+ }
+}
+@media (max-width: $sm) {
+ .logo {
+  &__image {
+   width: 3rem;
+   height: 3rem;
+  }
+ }
+}

@@ -1,0 +1,24 @@
+.header {
+ display: flex;
+ align-items: center;
+ padding: 0 2rem;
+ height: 6rem;
+ font-family: var(--font-title);
+ font-size: 5rem;
+ border-bottom: solid 1px var(--header-border);
+ background-color: $color-background;
+ &__brand-title {
+  flex-grow: 1;
+  text-align: center;
+ }
+}
+@media (max-width: $sm) {
+ .header {
+  position: sticky;
+  top: 0;
+  height: 3rem;
+  &__title {
+   display: none;
+  }
+ }
+}

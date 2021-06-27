@@ -1,6 +1,46 @@
-doctype html
-html(lang="en")
-	include ./components/head
-	body(style="height:5000px")
-		include ./components/header
-		include ./components/main
+//- INCLUDES
+include components/head
+//- INCLUDES END
+
+//- CONTENT
+-
+	const head = {
+		description :"Tienda de productos de belleza localizada en Cancún, Quintana Roo. Buenos precios con más de 30 años de experiencia estando en la rama del cuidado del cabello",
+		icon:"./assets/images/page-icon.png",
+		title:"Rizo's Shop - Productos de belleza"
+	}
+//- CONTENT END
+
+//- HTML
++head(head)
+	//- BODY
+	//- HEADER
+	header.header
+		img.logo__image.header__logo(src="./assets/images/logo.png", alt="Rizo's shop icon")
+		.header__brand-title
+			h1.header__title Rizo's Shop
+		.top-arrow.header__top-arrow
+			img.top-arrow__img(src="./assets/images/arrow.svg", alt="arrow top")
+	//- HEADER END
+	//- MAIN
+	main.main
+		//- HERO
+		section.hero.main__hero
+			.slider.hero__slider
+				.slider__img.slider__img--active
+				.slider__img
+				.slider__img
+				.slider__arrow-container.slider__arrow-container--left
+					img.slider__arrow.slider__arrow--left(src="./assets/images/slider-arrow.svg", alt="arrow")
+				.slider__arrow-container.slider__arrow-container--right
+					img.slider__arrow.slider__arrow--right(src="./assets/images/slider-arrow.svg", alt="arrow")
+				.slider__dot-container
+					img.slider__dot.slider__dot--active(src="./assets/images/slider-dot.svg", alt="dot")
+					img.slider__dot(src="./assets/images/slider-dot.svg", alt="dot")
+					img.slider__dot(src="./assets/images/slider-dot.svg", alt="dot")
+		//- HERO END
+	//- SECTION
+	//- SECTION END
+	//- MAIN END
+	//- BODY END
+//- HTML END

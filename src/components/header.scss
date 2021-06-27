@@ -7,18 +7,29 @@
  font-size: 5rem;
  border-bottom: solid 1px var(--header-border);
  background-color: $color-background;
+
  &__brand-title {
   flex-grow: 1;
   text-align: center;
  }
+
+ &__top-arrow {
+  display: none;
+ }
 }
+
 @media (max-width: $sm) {
  .header {
   position: sticky;
   top: 0;
   height: 3rem;
+
   &__title {
    display: none;
+  }
+
+  &__top-arrow {
+   display: block;
   }
  }
 }

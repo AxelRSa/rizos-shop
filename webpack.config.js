@@ -5,12 +5,12 @@ const path = require("path");
 
 module.exports = {
  mode: mode,
- devtool: "source-map",
- target: mode == "production" ? "browserlist" : "web",
+ devtool: mode == "production" ? false : "source-map",
+ target: mode == "production" ? "browserslist" : "web",
  devServer: { contentBase: "./dist" },
  entry: "./src/index.js",
  output: {
-  filename: "resource/script.js",
+  filename: mode === "production" ? "resource/script.[hash].js" : "resource/script.js",
   path: path.resolve(__dirname, "dist"),
   clean: mode == "production" ? true : false,
  },
@@ -20,22 +20,25 @@ module.exports = {
    {
     test: /\.scss$/i,
     use: [
-     mode == "production"
+     mode === "production"
       ? { loader: MiniCssExtractPlugin.loader, options: { publicPath: "../" } }
       : "style-loader",
      "css-loader",
-     mode == "production" ? "postcss-loader" : "sass-loader",
+     mode === "prodcution" ? "postcss-loader" :
+      "sass-loader",
     ],
    },
    {
     test: /\.(jpe?g|png|gif|svg|webp)$/i,
     type: "asset",
-    generator: { filename: "assets/images/[name][ext]" },
+    generator: {
+     filename: `src/media/images/[name]${mode === "production" ? "[hash]" : ""}[ext]`,
+    },
    },
    {
     test: /\.(eot|svg|ttf|woff|woff2)$/i,
     type: "asset",
-    generator: { filename: "assets/fonts/[name][ext]" },
+    generator: { filename: `src/media/fonts/[name]${mode === "production" ? "[hash]" : ""}[ext]`, },
    },
   ],
  },
@@ -45,6 +48,6 @@ module.exports = {
    filename: "index.html",
    inject: "body",
   }),
-  new MiniCssExtractPlugin({ filename: "resource/styles.css" }),
+  new MiniCssExtractPlugin({ filename: "resource/styles.[hash].css" }),
  ],
 };

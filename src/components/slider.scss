@@ -37,6 +37,9 @@
   background-color: #fff9;
   border-radius: 50%;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &--left {
    left: 1rem;
@@ -54,13 +57,30 @@
   &--left {
    transform: rotate(180deg);
   }
-
-  &--right {}
  }
 
- &__container {}
+ &__dot-container {
+  position: absolute;
+  z-index: 10;
+  bottom: .5rem;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff9;
+  border-radius: 1rem;
+  padding: 0 .5rem;
+ }
 
- &__container {}
+ &__dot {
+  width: 1.5rem;
+  padding: 0 1rem;
+  transition: width .5s;
+  &--active {
+   width: 2rem;
+  }
+ }
 }
 
 @media (max-width: $xs) {
